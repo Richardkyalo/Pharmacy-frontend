@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -34,38 +33,48 @@ session_start();
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                 <div class="brand-logo">
-                <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>  
+                  <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>
                 </div>
-                <h4>Hello! let's get started</h4>
-                <h6 class="fw-light">Sign in to continue.</h6>
-                <form class="pt-3" method="POST" action="../api/process_login.php">
-                  <span>
-                    <?php
-                    if (isset($_SESSION['error'])) {
-                     ?>
-                     <p class="text-danger"> <?php echo $_SESSION['error']; ?></p>
-                    <?php
+                <h4>New here?</h4>
+                <h6 class="fw-light">Signing up is easy. It only takes a few steps</h6>
+                <?php
+                    if (isset($_SESSION['errors'])) {
+                        echo '<ul>';
+                        foreach ($_SESSION['errors'] as $error) {
+                            echo '<li class="text-danger">' . htmlspecialchars($error) . '</li>';
+                        }
+                        echo '</ul>';
+                        unset($_SESSION['errors']);
+                    }
+                    if (isset($_SESSION['error'])){
+                        echo '<p class="text-danger">'.  htmlspecialchars($_SESSION['error']).'</p>';
                         unset($_SESSION['error']);
                     }
-                    ?>
-                  </span>
+                ?>
+                               
+                <form class="pt-3" method="POST" action="../api/process_register.php">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Email">
+                    <input type="text" name="username" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
+                    <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                   </div>
-                  <div class="mt-3 d-grid gap-2">
-                    <button type="submit" class="btn btn-block btn-primary btn-lg fw-medium auth-form-btn">SIGN IN</button>
+                  <div class="form-group">
+                    <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <div class="my-2 d-flex justify-content-between align-items-center">
+                  <div class="form-group">
+                    <input type="password" name="confirm_password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Confirm Password">
+                  </div>
+                  <div class="mb-4">
                     <div class="form-check">
                       <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> Keep me signed in </label>
+                        <input type="checkbox" class="form-check-input"> I agree to all Terms & Conditions </label>
                     </div>
-                    <a href="#" class="auth-link text-black">Forgot password?</a>
                   </div>
-                  <div class="text-center mt-4 fw-light"> Don't have an account? <a href="register.php" class="text-primary">Create</a>
+                  <div class="mt-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg fw-medium auth-form-btn">SIGN UP</button type="submit">
+                  </div>
+                  <div class="text-center mt-4 fw-light"> Already have an account? <a href="login.php" class="text-primary">Login</a>
                   </div>
                 </form>
               </div>
