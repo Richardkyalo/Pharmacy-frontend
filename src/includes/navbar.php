@@ -7,11 +7,11 @@
           </div>
           <div>
             <a class="navbar-brand brand-logo" href="index.html">
-              <img src="assets/images/logo.svg" alt="logo" />
+            <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>
             </a>
-            <a class="navbar-brand brand-logo-mini" href="index.html">
-              <img src="assets/images/logo-mini.svg" alt="logo" />
-            </a>
+            <!-- <a class="navbar-brand brand-logo-mini" href="index.html">
+            <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>
+            </a> -->
           </div>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-top">
