@@ -1,11 +1,16 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">
+              <a class="nav-link" href="#">
                 <i class="mdi mdi-grid-large menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title fw-bold">My Pharmacies</span>
               </a>
             </li>
+            <ul class="nav-item menu-items">
+              <a class="nav-link" href="">
+              <li class="nav-item nav-category">UI Elements</li>
+              </a>  
+            </ul>
             <li class="nav-item nav-category">UI Elements</li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

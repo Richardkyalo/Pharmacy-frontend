@@ -6,8 +6,9 @@
             </button>
           </div>
           <div>
-            <a class="navbar-brand brand-logo" href="index.html">
+            <a class="navbar-brand brand-logo" href="#">
             <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>
+            <h5 class="fw-bold text-primary">Manager</h5>
             </a>
             <!-- <a class="navbar-brand brand-logo-mini" href="index.html">
             <h4 class="fw-bold text-primary">My Phar<span class="text-dark"><i>macy</i></span> </h4>
